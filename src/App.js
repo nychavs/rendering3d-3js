@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import { useRef, useState } from 'react';
+//display the 3d models
+import {Canvas} from '@react-three/fiber';
+// rotate things
+import {OrbitControls, useGLTF} from '@react-three/drei';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <div className="wrapper">
+            <div className="card">
+                <div class="product-canvas">
+                    <Canvas>
+
+
+                    </Canvas>
+
+                </div>
+                <h2>Color chooser</h2>
+                <div className='colors'>
+                    <div>
+                        <input type="color" id="head" name="head"
+                              value="#e66465" />
+                        <label for="head">Main</label>
+                      </div>
+
+                    <div>
+                        <input type="color" id="body" name="body"
+                                value="#f6b73c" />
+                        <label for="body">Stripes</label>
+                    </div>
+                    <div>
+                        <input type="color" id="body" name="body"
+                                value="#f6b73c" />
+                        <label for="body">Soul</label>
+                    </div>
+                </div>
+        </div>
+    </div>
+     
+
     </div>
   );
 }
